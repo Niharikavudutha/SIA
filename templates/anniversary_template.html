@@ -1,0 +1,63 @@
+<!-- templates/anniversary_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Work Anniversary!</title>
+  <style>
+    body {
+      background: #fbe9e7;
+      color: #bf360c;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    .card {
+      border: 4px dashed #d84315;
+      border-radius: 15px;
+      background-color: #fff;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .logos img {
+      height: 60px;
+      margin: 0 10px;
+    }
+    .user-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #d84315;
+      margin: 20px 0;
+    }
+    .anniv-message {
+      font-size: 1.4rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <a href="/" class="back">Back</a>
+  <div class="card">
+    <div class="logos">
+      <img src="[TECHPROJECTS_LOGO]" alt="TechProjects">
+      <img src="[CS_LOGO]" alt="C&S">
+    </div>
+    <h1>🎊 Happy Work Anniversary, [NAME]!</h1>
+    <img src="[PHOTO_URL]" alt="User Photo" class="user-photo">
+    <p class="anniv-message">Thank you for your dedication and contributions. Wishing you continued success ahead! 🌟</p>
+  </div>
+
+  <script>
+    const msg = new SpeechSynthesisUtterance("Happy Work Anniversary [NAME]! Thank you for your dedication.");
+    msg.lang = "en-US";
+    window.speechSynthesis.speak(msg);
+
+    setTimeout(() => {
+      window.location.href = "/chat?name={{ name }}";
+    }, 7000);
+  </script>
+</body>
+</html>

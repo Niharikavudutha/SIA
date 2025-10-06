@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HR Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #f5f7ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        padding: 10px;
+      }
+
+      .dashboard {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 150px);
+        gap: 15px;
+        width: 100%;
+        max-width: 1100px;
+        height: 100%;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        font-size: 13px;
+      }
+
+      .card h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+
+      .card p,
+      .card small,
+      .card a {
+        font-size: 12px;
+      }
+
+      .news-carousel {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #1a2aff;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+      }
+
+      .carousel-item {
+        padding: 16px;
+        color: #fff;
+      }
+
+      .carousel-item h5 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .carousel-item p {
+        font-size: 12px;
+        margin: 0;
+      }
+
+      .holiday {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        background: linear-gradient(135deg, #2196f3, #0d47a1);
+        color: #fff;
+      }
+
+      .policies {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        background: #ffeaea;
+      }
+
+      .policies-orange {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        background: linear-gradient(135deg, #ff7043, #d84315);
+        color: #fff;
+      }
+
+      .benefits {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        background: linear-gradient(135deg, #64b5f6, #1565c0);
+        color: #fff;
+      }
+
+      .event {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        background: linear-gradient(135deg, #3f51b5, #1a237e);
+        color: #fff;
+      }
+
+      .our-story {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+        background: #e0f7fa;
+        text-align: center;
+      }
+
+      .office-layout {
+        grid-column: 3 / 4;
+        grid-row: 4 / 5;
+        background: #fff3e0;
+        text-align: center;
+      }
+
+      .sia {
+        grid-column: 4 / 5;
+        grid-row: 4 / 5;
+        background: #e8eaf6;
+        text-align: center;
+      }
+
+      .wishes {
+        grid-column: 3 / 5;
+        grid-row: 2 / 4;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .wishes-top {
+        flex: 1;
+        background: url("https://cdn-icons-png.flaticon.com/512/1995/1995574.png")
+          no-repeat center/contain;
+      }
+
+      .wishes-bottom {
+        background: #1a237e;
+        color: #fff;
+        text-align: center;
+        padding: 12px;
+      }
+
+      .btn {
+        margin-top: 6px;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        background: #0d47a1;
+        width: 90px !important;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="news-carousel">
+        <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h5>Breaking News 1</h5>
+              <p>Quick update about HR policy changes this quarter.</p>
+            </div>
+            <div class="carousel-item">
+              <h5>Employee Spotlight</h5>
+              <p>Celebrating top performers of the month.</p>
+            </div>
+            <div class="carousel-item">
+              <h5>Upcoming Event</h5>
+              <p>Join us for the Annual Tech Meetup on 20th Sept.</p>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#newsCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#newsCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Holiday -->
+      <div class="card holiday">
+        <h3>Holiday Calendar</h3>
+        <p>Next Holiday: Diwali</p>
+        <small>Thursday, 23 Oct 2025</small>
+      </div>
+
+      <!-- Policies -->
+      <div class="card policies">
+        <h3>HR Policies</h3>
+        <a href="#" class="btn">View All</a>
+      </div>
+
+      <!-- Policies Orange -->
+      <div class="card policies-orange">
+        <h3>Insurance Policy</h3>
+        <a href="#" class="btn">View All</a>
+      </div>
+
+      <!-- Benefits -->
+      <div class="card benefits">
+        <h3>Employee Benefits</h3>
+        <a href="#" class="btn">View All</a>
+      </div>
+
+      <!-- Event -->
+      <div class="card event">
+        <h3>Upcoming Event</h3>
+        <p>The Great Escape 2025</p>
+        <small>20th Sept, 2025 | 11:00 AM</small>
+        <a href="#" class="btn">View All</a>
+      </div>
+
+      <!-- Our Story -->
+      <div class="card our-story">
+        <h3>Our Story</h3>
+        <p>Read a Story</p>
+      </div>
+
+      <!-- Office Layout -->
+      <div class="card office-layout">
+        <h3>Office Layout</h3>
+        <p>View Floor Plan</p>
+        <a href="/office_layout" target="_blank" class="btn">View</a>
+      </div>
+
+      <!-- SIA Assistant -->
+      <div class="card sia">
+        <h3>Meet SIA</h3>
+        <p>Your Smart Interactive Assistant</p>
+        <img
+          src="../static/Robot.png"
+          alt="SIA"
+          style="width: 50px; margin-top: 8px"
+        />
+        <a href="#" class="btn">Start</a>
+      </div>
+
+      <!-- Wishes -->
+      <div class="wishes">
+        <div class="wishes-top"></div>
+        <div class="wishes-bottom">
+          <h3>Today's Wishes</h3>
+          <p id="birthday-msg">🎂 Happy Birthday: <b>None</b></p>
+          <p id="anniversary-msg">🎉 Work Anniversary: <b>None</b></p>
+          <a href="#" class="btn">View All</a>
+        </div>
+      </div>
+    </div>
+    <script src="static/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

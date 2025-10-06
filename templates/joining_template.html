@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card">
+        <div class="logos">
+            <img class="logo" src="[TECHPROJECTS_LOGO]" alt="TechProjects">
+            <img class="logo" src="[CS_LOGO]" alt="C&S">
+        </div>
+        <h1 class="greeting">Welcome to the Team, [NAME]! 🎉</h1>
+        <div class="photo-frame">
+            <img src="[PHOTO_URL]" alt="User Photo" class="user-photo">
+        </div>
+        <p class="message">We're thrilled to have you onboard as our new <strong>[DESIGNATION]</strong>!</p>
+        <p class="message">Wishing you success and fulfillment in your journey with us. 🚀</p>
+    </div>
+</body>
+</html> -->
+
+<!-- templates/joining_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Onboard!</title>
+  <style>
+    body {
+      background: #e0f7fa;
+      color: #004d40;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    .card {
+      border: 4px solid #00796b;
+      border-radius: 15px;
+      background-color: #ffffff;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    }
+    .logos img {
+      height: 60px;
+      margin: 0 10px;
+    }
+    .user-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #00796b;
+      margin: 20px 0;
+    }
+    .welcome-message {
+      font-size: 1.4rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logos">
+      <img src="[TECHPROJECTS_LOGO]" alt="TechProjects">
+      <img src="[CS_LOGO]" alt="C&S">
+    </div>
+    <h1>👋 Welcome, [NAME]!</h1>
+    <img src="[PHOTO_URL]" alt="User Photo" class="user-photo">
+    <p class="welcome-message">We’re thrilled to have you on board! Wishing you an amazing journey ahead at TechProjects 🚀</p>
+  </div>
+
+  <script>
+    const msg = new SpeechSynthesisUtterance("Welcome [NAME]! We are thrilled to have you join TechProjects.");
+    msg.lang = "en-US";
+    window.speechSynthesis.speak(msg);
+
+    setTimeout(() => {
+      window.location.href = "/chat?name={{ name }}";
+    }, 7000);
+  </script>
+</body>
+</html>

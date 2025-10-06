@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechProjects Kiosk</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="topbar">
+      <div>Techprojects_Website</div>
+      <div style="color: #1e3a8a; font-weight: 600">SIA</div>
+  </div>
+  <a href="/" class="back">Back</a>
+  <div id="sia-output">🎤 Listening...</div>
+  <div class="background-container">
+    <!-- Background Images Slideshow -->
+    <img class="background-image active" src="static/bg.jpg" alt="Background" /> 
+    <img class="background-image" src="static/bgc8.jpeg" alt="Background" />
+ 
+    <div class="funky-container">
+      <!-- LEFT Side: Slideshow Text -->
+      <div class="funky-text-section">
+        <div class="slide active">
+          <h1>🎉 WELCOME TO <span class="rainbow-text">TECHPROJECTS</span></h1>
+          <p>Where innovation gets a glow-up and AI meets attitude.✨</p>
+        </div>
+ 
+        <div class="slide">
+          <h2>Meet <span class="rainbow-text">SIA</span></h2>
+          <p>
+            SIA is your AI sidekick with tech powers and mad personality! <br />
+            Smart, sassy, and always ready to help you out. 😎
+          </p>
+        </div>
+ 
+        <div class="slide">
+          <h2>🔍 What Can SIA Do?</h2>
+          <p>
+            • Get the weather on demand<br />
+            • Latest news served hot<br />
+            • Cricket updates<br />
+            • Find distances from any place to anywhere
+          </p>
+        </div>
+ 
+        <div class="slide">
+          <h2>🧾 Register In Style</h2>
+          <p>
+            Just scan the QR code ➡️ and you're in the club! 
+          </p>
+        </div>
+ 
+        <div class="slide">
+          <h2>👋 How to Exit?</h2>
+          <p>
+            Just say “Bye SIA” or "EXIT".
+          </p>
+        </div>
+      </div>
+ 
+      <!-- RIGHT Side: QR/Bot toggle -->
+      <div class="funky-bot-section">
+        <!-- QR Section -->
+        <div id="qr-section" class="bot-block">
+          <img id="qr-image" class="avatar" src="static/registration_qr.png" alt="QR Code" />
+          <p id="qr-text" class="bot-caption">Just scan me, bestie!</p>
+        </div>
+        <h2 id="bot-status">Say "HELLO SIA" to begin interaction...</h2>
+ 
+        <!-- SIA Bot Section -->
+        <div id="bot-section" class="bot-block hidden">
+          <img id="sia-avatar" class="avatar" src="https://media2.giphy.com/media/7x3PHPSMXSONHFuOK4/giphy.gif" alt="SIA Bot" />
+          <p id="sia-text" class="bot-caption">Say: "HELLO SIA"</p>
+          <video id="video" autoplay playsinline style="display:none;"></video>
+      <canvas id="canvas" style="display:none;"></canvas>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script src="static/index.js"></script>
+  <script src="static/slideshow.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Face Recognition</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* full-page background */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../static/FR_bg.svg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+align-items: center;  
+gap: 50px;}
+
+  /* left face box */
+  .face-box {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .face-box img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* right side panel + scanning */
+  .panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .panel img {
+    width: 400px; /* adjust to your image width */
+    height: auto;
+    display: block;
+    background-color: #3a8bd6;
+  }
+
+  .scanning {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 1rem;
+
+  }
+
+  .progress-bar {
+    display: flex;
+    margin-top: 5px;
+    width: 300px; /* same as your panel width */
+    height: 15px;
+    border: 1px solid #999;
+    overflow: hidden;
+  }
+
+  /* one stripe cell */
+  .stripe {
+    flex: 1;
+    background: #3a8bd6; /* blue */
+  }
+  .stripe.gray {
+    background: #aaa; /* gray stripes at the end */
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <!-- left face box -->
+    <div class="face-box">
+      <img src="../static/Person_scan.svg" alt="Face">
+    </div>
+
+    <!-- right panel -->
+    <div class="panel">
+      <!-- face recognition image -->
+      <img src="../static/Face_recog.svg" alt="Face Recognition Panel">
+
+      <!-- scanning text -->
+      <div class="scanning">
+        SCANNING...<br>
+        70%
+      </div>
+
+      <!-- striped progress bar -->
+      <div class="progress-bar">
+        <!-- make first 14 blue stripes, last 6 gray stripes -->
+        <!-- adjust count to match your image exactly -->
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <!-- gray part -->
+        <div class="stripe gray"></div>
+        <div class="stripe gray"></div>
+        <div class="stripe gray"></div>
+        <div class="stripe gray"></div>
+        <div class="stripe gray"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Status & hidden elements for index.js -->
+  <h2 id="bot-status"></h2>
+  <video id="video" autoplay playsinline style="display:none;"></video>
+  <canvas id="canvas" style="display:none;"></canvas>
+  <!-- index.js handles recognition + redirect -->
+  <script src="static/index.js"></script>
+  <!-- <script>
+  setTimeout(() => {
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name") || "Guest";
+    window.location.href = `/chat?name=${encodeURIComponent(name)}`;
+  }, 5000); // redirect after 5 seconds of scanning
+ </script>
+ <script>
+  setTimeout(() => {
+    window.location.href = "/chat?name=Guest";
+  }, 5000);
+</script> -->
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today's Wishes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="/" class="back">Back</a>
+  <h2>🎉 Today's Wishes</h2>
+  <div id="birthday-list"></div>
+  <div id="anniversary-list"></div>
+
+  <script>
+    async function loadWishes() {
+      const res = await fetch("/wishes");
+      const data = await res.json();
+
+      const bdayDiv = document.getElementById("birthday-list");
+      const annDiv = document.getElementById("anniversary-list");
+
+      if (data.birthdays && data.birthdays.length > 0) {
+        bdayDiv.innerHTML = "🎂 Happy Birthday: " + data.birthdays.join(", ");
+      } else {
+        bdayDiv.innerHTML = "🎂 No birthdays today";
+      }
+
+      if (data.anniversaries && data.anniversaries.length > 0) {
+        annDiv.innerHTML = "🎉 Work Anniversary: " + data.anniversaries.join(", ");
+      } else {
+        annDiv.innerHTML = "🎉 No anniversaries today";
+      }
+    }
+    loadWishes();
+  </script>
+</body>
+</html>
